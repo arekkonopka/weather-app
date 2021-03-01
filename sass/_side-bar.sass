@@ -1,0 +1,84 @@
+.side-bar
+  position: absolute
+  top: 0
+  bottom: 0
+  right: -100%
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0 , 0 , 0.85)
+  transition: 1s
+  text-align: center
+  p
+    padding: 20px
+    font-size: 20px
+  .wrapper-img
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    width: 100%
+    .img
+      width: 30%
+      height: 30vh
+      margin: 10px 10%
+      background-color: #fff
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      cursor: pointer
+      transition: 0.2s
+      border: 1px solid white
+      &:hover
+        transform: scale(1.1)
+      &:nth-child(1)
+        background-image: url('../img/background/cloud-4820504_1920.jpg')
+      &:nth-child(2)
+        background-image: url('../img/background/clouds-284688_1920.jpg')
+      &:nth-child(3)
+        background-image: url('../img/background/lightning-4702140_1920.jpg')
+      &:nth-child(4)
+        background-image: url('../img/background/snow-1082229_1920.jpg')
+.active-bar
+  right: 0
+
+.wrapper-lang
+  display: flex
+  justify-content: center
+  align-items: center
+  img
+    width: 40px
+    height: 40px
+    margin: 0 10px
+    cursor: pointer
+
+@media screen and ( min-width: 500px ) and (orientation: portrait)
+  .side-bar
+    p
+      padding: 20px
+      font-size: 35px
+    .wrapper-img
+      .img
+        &:hover
+          transform: none
+
+  .wrapper-lang
+    img
+      width: 50px
+      height: 50px
+      margin: 10px 20px
+
+@media screen and ( min-width: 1000px ) and (orientation: portrait)
+  .side-bar
+    p
+      margin: 10px
+      font-size: 40px
+    .wrapper-img
+      .img
+        margin: 30px 20px
+        &:hover
+          transform: none
+
+  .wrapper-lang
+    img
+      width: 70px
+      height: 70px
+      margin: 20px 20px

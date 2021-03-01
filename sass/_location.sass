@@ -1,0 +1,94 @@
+.container
+  margin: 10px auto
+  width: 600px
+  height: 700px
+  background-image: url('../img/background/snow-1082229_1920.jpg')
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  border-radius: 10px
+  position: relative
+  overflow: hidden
+
+.location
+  display: flex
+  flex-direction: row
+  justify-content: center
+  background-color: rgba(0,0,0,0.15)
+  padding: 10px
+  text-transform: uppercase
+  i
+    padding: 6px
+    font-size: 25px
+  h1
+    font-size: 30px
+    margin-left: 3px
+    background: -webkit-linear-gradient(90deg, rgba(255,237,195,1) 0%, rgba(255,255,255,1) 100%, rgba(0,212,255,1) 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+@media screen and ( min-width: 200px ) and (orientation: portrait)
+  .container
+    width: 100vw
+    height: 100vh
+    margin: 0
+
+@media screen and ( min-width: 300px ) and (orientation: portrait)
+  .container
+    .location
+      i
+        padding: 5px
+        font-size: 16px
+      h1
+        font-size: 22px
+        margin-left: 3px
+
+@media screen and ( min-width: 350px ) and (orientation: portrait)
+  .container
+    .location
+      padding: 8px
+      i
+        padding: 5px
+        font-size: 20px
+      h1
+        font-size: 25px
+        margin-left: 3px
+
+@media screen and ( min-width: 400px ) and (orientation: portrait)
+  .container
+    .location
+      padding: 8px
+      i
+        padding: 5px
+        font-size: 20px
+      h1
+        font-size: 25px
+        margin-left: 3px
+
+@media screen and ( min-width: 500px ) and (orientation: portrait)
+  .container
+    .location
+      padding: 12px
+      i
+        padding: 7px
+        font-size: 27px
+      h1
+        font-size: 35px
+
+@media screen and ( min-width: 700px ) and (orientation: portrait)
+  .container
+    .location
+      padding: 15px
+      i
+        font-size: 35px
+      h1
+        font-size: 40px
+
+@media screen and ( min-width: 1000px ) and (orientation: portrait)
+  .container
+    .location
+      padding: 25px
+      i
+        font-size: 45px
+      h1
+        font-size: 60px

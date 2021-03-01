@@ -1,0 +1,49 @@
+.burger
+  position: absolute
+  top: 15px
+  right: 15px
+  width: 40px
+  height: 35px
+  cursor: pointer
+  z-index: 1
+  span
+    background-color: #fff
+    position: absolute
+    width: 100%
+    height: 6px
+    border-radius: 10px
+    &:nth-child(1)
+      top: 0
+      left: 0
+    &:nth-child(2)
+      top: calc(50% - 3px)
+      left: 0
+    &:nth-child(3)
+      bottom: 0
+      left: 0
+.active
+  top: 15px
+  right: 15px
+  span
+    transition: 0.4s
+    &:nth-child(1)
+      top: 0
+      left: 0
+    &:nth-child(2)
+      top: calc(50% - 3px)
+      left: -4%
+    &:nth-child(3)
+      bottom: 0
+      left: -8%
+
+@media screen and ( min-width: 500px ) and (orientation: portrait)
+  .burger
+    top: 25px
+    right: 25px
+    width: 60px
+    height: 55px
+  span
+    height: 40px
+    &:nth-child(2)
+      top: calc(50% - 7px)
+      left: 0

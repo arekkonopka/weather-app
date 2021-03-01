@@ -1,0 +1,91 @@
+.weather
+  background-color: rgba(0, 0, 0, 0.15)
+  margin: 5px 0 0
+  padding: 10px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  .temp
+    margin-left: 20px
+    .number
+      font-size: 60px
+      cursor: pointer
+    p.description
+      margin-top: 18px
+      font-size: 23px
+  .img
+    width: 80%
+    margin-right: 0 auto
+    text-align: center
+    p
+      font-size: 23px
+
+@media screen and ( min-width: 300px ) and (orientation: portrait)
+  .weather
+    padding: 5px
+    .temp
+      p.description
+        font-size: 20px
+    .img
+      width: 40%
+
+@media screen and ( min-width: 359px ) and (orientation: portrait)
+  .weather
+    .temp
+      margin-left: 20px
+      .number
+        font-size: 50px
+      p.description
+        margin-top: 20px
+        font-size: 20px
+    .img
+      width: 40%
+      margin-right: 0 auto
+
+@media screen and ( min-width: 400px ) and (orientation: portrait)
+  .weather
+    .temp
+      margin-left: 20px
+      .number
+        font-size: 50px
+      p.description
+        margin-top: 20px
+        font-size: 20px
+    .img
+      width: 40%
+      margin-right: 0 auto
+
+@media screen and ( min-width: 500px ) and (orientation: portrait)
+  .weather
+    padding: 10px
+    .temp
+      margin-left: 20px
+      .number
+        font-size: 60px
+      p.description
+        font-size: 27px
+    .img
+      width: 60%
+
+@media screen and ( min-width: 700px ) and (orientation: portrait)
+  .weather
+    margin: 10px 20px
+    .temp
+      margin-left: 40px
+      .number
+        font-size: 80px
+      p.description
+        font-size: 35px
+
+@media screen and ( min-width: 1000px ) and (orientation: portrait)
+  .weather
+    margin: 10px 0
+    .temp
+      margin-left: 40px
+      .number
+        font-size: 120px
+      p.description
+        font-size: 40px
+    .img
+      p
+        font-size: 30px

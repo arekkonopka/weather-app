@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="location">
+      <i class="fas fa-map-marker-alt"></i>
+      <h1 class="location-country-city">default</h1>
+    </div>
+    <div class="notification">
+      <h1 class='access'>Zezwól na dostęp do lokalizacji</h1>
+    </div>
+    <div class="weather">
+      <div class="temp">
+        <h1 class="number">default°<span>C</span></h1>
+        <p class="description">default</p>
+      </div>
+      <div class="img">
+        <div class="img-weather"></div>
+        <p class="pod-desc">Dzień/Noc:</p>
+        <p class="description-pod"></p>
+      </div>
+    </div>
+    <h1 class='h1-desc'>Szczegóły</h1>
+    <div class="details">
+      <div class="detail"><i class="far fa-compass"></i>
+        <p class="pressure-desc">Ciśnienie</p>
+        <div class="pressure">default</div>
+      </div>
+      <div class="detail"><i class="fas fa-wind"></i>
+        <p class='wind-desc'>Prędkość wiatru</p>
+        <div class="wind">default</div>
+      </div>
+      <div class="detail"><i class="fab fa-cloudscale"></i>
+        <p class="humidity-desc">Wilgotność</p>
+        <div class="humidity">default</div>
+      </div>
+      <div class="detail"><i class="fas fa-tint"></i>
+        <p class="dew-point-desc">Punkt rosy</p>
+        <div class="dew-point">default</div>
+      </div>
+      <div class="detail"><i class="fas fa-cloud"></i>
+        <p class="cloud-desc">Zachmurzenie</p>
+        <div class="cloud">default</div>
+      </div>
+    </div>
+    <div class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="side-bar">
+      <p class="language-desc">Wybierz język</p>
+      <div class="wrapper-lang">
+        <img src="/img/background/iconfinder_Flag_of_Poland_96372.png" alt="Polish flag" class="pol-flag" data-flag=''>
+        <img src="/img/background/iconfinder_Flag_of_England_96304.png" alt="England flag" class="eng-flag"
+          data-flag=''>
+      </div>
+      <p class="theme-desc">Wybierz motyw</p>
+      <div class="wrapper-img">
+        <div class="img" data-url='url(../img/background/cloud-4820504_1920.jpg' )></div>
+        <div class="img" data-url='url(../img/background/clouds-284688_1920.jpg' )></div>
+        <div class="img" data-url='url(../img/background/lightning-4702140_1920.jpg' )></div>
+        <div class="img" data-url='url(../img/background/snow-1082229_1920.jpg' )></div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy 2021 Arkadiusz Konopka learning app</p>
+    </footer>
+  </div>
+
+
+  <script src="js/changeDeg.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/side-bar.js"></script>
+  <script src="js/api.js"></script>
+</body>
+
+</html>
