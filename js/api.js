@@ -1,14 +1,18 @@
 const apiKey = '048e50534e65459a929ba4592b0e9259'
 const nav = navigator.geolocation.getCurrentPosition(succes, error)
+let lan = 'pl'
+
 function succes(position) {
   let lat = position.coords.latitude
   let lon = position.coords.longitude
   getWeather(lat, lon)
 }
-function error(lang = 'pl') {
+
+function error(lan) {
   let lat = 52.2297700
   let lon = 21.0117800
-  fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&include=minutely&lang=${lang}`)
+
+  fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&include=minutely&lang=${lan}`)
     .then((res) => res.json())
     .then((data) => {
       loc.textContent = `${data.data[0].country_code}, ${data.data[0].city_name}`
@@ -22,6 +26,7 @@ function error(lang = 'pl') {
       humidity.textContent = `${data.data[0].rh} %`
       dewPoint.textContent = `${data.data[0].dewpt} °C`
       cloudy.textContent = `${data.data[0].clouds} %`
+      deg.changeDeg(data.data[0].temp)
     })
     .then(() => {
       alert.style.top = '20px'
@@ -30,8 +35,11 @@ function error(lang = 'pl') {
 }
 
 
-function getWeather(lat, lon, lang = 'pl') {
-  fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&include=minutely&lang=${lang}`)
+function getWeather(lat, lon) {
+  let lang = 'pl'
+  console.log()
+
+  fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&include=minutely&lang=${sideBar.choseLan()}`)
     .then((res) => res.json())
     .then((data) => {
 
@@ -47,14 +55,10 @@ function getWeather(lat, lon, lang = 'pl') {
       dewPoint.textContent = `${data.data[0].dewpt} °C`
       cloudy.textContent = `${data.data[0].clouds} %`
 
-      //naprawić błąd dlaczego nie przeskakuje z F na C
-      if (tempValue.classList.contains('fahrenheit')) {
-        deg.changeToCelsius(deg.changeToFahrenheit())
-      } else {
-        deg.changeToFahrenheit(data.data[0].temp)
-      }
-    })
 
+      deg.changeDeg(data.data[0].temp)
+
+    })
 }
 
 

@@ -10,7 +10,6 @@ const dewPoint = document.querySelector('.dew-point')
 const cloudy = document.querySelector('.cloud')
 const alert = document.querySelector('.notification')
 
-const deg = new Degree()
 
 data = {
   polish: {
@@ -31,6 +30,7 @@ class Pl {
     this.theme = 'Wybierz motyw'
     this.pod = 'Dzień/Noc:'
   }
+
   setPl() {
     document.querySelector('.access').textContent = this.access
     document.querySelector('.h1-desc').textContent = this.h1Desc
@@ -57,8 +57,8 @@ class Eng {
     this.language = 'Choose language'
     this.theme = 'Choose theme'
     this.pod = 'Day/Night:'
-
   }
+
   setEng() {
     document.querySelector('.access').textContent = this.access
     document.querySelector('.h1-desc').textContent = this.h1Desc
