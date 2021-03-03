@@ -1,5 +1,5 @@
-// burger animation
 class SideBar {
+
   burgerAnimation() {
     const burger = document.querySelector('.burger')
     burger.addEventListener('click', () => {
@@ -7,13 +7,15 @@ class SideBar {
       const showBar = document.querySelector('.side-bar').classList.toggle('active-bar')
     })
   }
+
   chooseTheme() {
     const theme = [...document.querySelectorAll('.wrapper-img .img')]
     theme.forEach((theme) => {
       theme.addEventListener('click', (e) => {
         let bgc = e.target.getAttribute('data-url')
         let container = document.querySelector('.container')
-        container.style.backgroundImage = `${bgc}`
+        container.style.backgroundImage = `url('${bgc}')`
+        console.log(`url('${bgc}')`)
       })
     })
   }
