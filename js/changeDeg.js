@@ -22,4 +22,5 @@ class Degree {
   }
 }
 
+
 const deg = new Degree

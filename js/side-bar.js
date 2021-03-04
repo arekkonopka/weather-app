@@ -24,7 +24,6 @@ class SideBar {
   choseLan() {
     let isThePolishLan = true
 
-
     const flagEN = document.querySelector('.eng-flag')
     const flagPL = document.querySelector('.pol-flag')
 
@@ -48,7 +47,6 @@ class SideBar {
     return clickEng(), clickPl()
   }
 }
-
 
 const sideBar = new SideBar()
 sideBar.burgerAnimation()

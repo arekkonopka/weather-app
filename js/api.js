@@ -36,8 +36,6 @@ function error(lan) {
 
 
 function getWeather(lat, lon) {
-  let lang = 'pl'
-  console.log()
 
   fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&include=minutely&lang=${sideBar.choseLan()}`)
     .then((res) => res.json())
