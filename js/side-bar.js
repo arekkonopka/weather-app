@@ -9,20 +9,33 @@ class SideBar {
   }
 
   chooseTheme() {
+    let container = document.querySelector('.container')
     const theme = [...document.querySelectorAll('.wrapper-img .img')]
+
+    if (storage.getStorage('theme') !== null) {
+      let getThemeFromStorage = storage.getStorage('theme')
+      container.style.backgroundImage = `url('${getThemeFromStorage}')`
+    }
+
     theme.forEach((theme) => {
       theme.addEventListener('click', (e) => {
         let bgc = e.target.getAttribute('data-url')
-        let container = document.querySelector('.container')
+        storage.addToStorage('theme', bgc)
         container.style.backgroundImage = `url('${bgc}')`
       })
     })
+
   }
 
 
-  //naprawic zmiane z Eng na PL oraz podstawic "eng" do fetch 
-  choseLan() {
+  chooseLan() {
     let isThePolishLan = true
+
+    if (storage.getStorage('lang') === 'pl') {
+      pl.setPl()
+    } else {
+      eng.setEng()
+    }
 
     const flagEN = document.querySelector('.eng-flag')
     const flagPL = document.querySelector('.pol-flag')
@@ -30,24 +43,29 @@ class SideBar {
     const clickPl = () => {
       isThePolishLan = true
       if (isThePolishLan) {
-        pl.setPl()
-      } return "pl"
+        storage.addToStorage('lang', pl.setPl())
+      }
     }
 
     const clickEng = () => {
       isThePolishLan = false
       if (!isThePolishLan) {
-        eng.setEng()
-      } return "eng"
+
+        storage.addToStorage('lang', eng.setEng())
+
+      }
     }
 
     flagPL.addEventListener('click', clickPl)
     flagEN.addEventListener('click', clickEng)
 
-    return clickEng(), clickPl()
+
   }
 }
 
 const sideBar = new SideBar()
 sideBar.burgerAnimation()
 sideBar.chooseTheme()
+sideBar.chooseLan()
+
+

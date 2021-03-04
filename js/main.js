@@ -42,6 +42,7 @@ class Pl {
     document.querySelector('.language-desc').textContent = this.language
     document.querySelector('.theme-desc').textContent = this.theme
     document.querySelector('.pod-desc').textContent = this.pod
+    return "pl"
   }
 }
 
@@ -70,6 +71,7 @@ class Eng {
     document.querySelector('.language-desc').textContent = this.language
     document.querySelector('.theme-desc').textContent = this.theme
     document.querySelector('.pod-desc').textContent = this.pod
+    return "eng"
   }
 }
 

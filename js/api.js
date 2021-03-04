@@ -1,5 +1,5 @@
 const apiKey = '048e50534e65459a929ba4592b0e9259'
-const nav = navigator.geolocation.getCurrentPosition(succes, error)
+navigator.geolocation.getCurrentPosition(succes, error)
 let lan = 'pl'
 
 function succes(position) {
@@ -37,7 +37,7 @@ function error(lan) {
 
 function getWeather(lat, lon) {
 
-  fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&include=minutely&lang=${sideBar.choseLan()}`)
+  fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&include=minutely&lang=${storage.getStorage('lang')}`)
     .then((res) => res.json())
     .then((data) => {
 
