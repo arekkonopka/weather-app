@@ -12,5 +12,5 @@ Project is created with:
 *Html5
 *CSS3
 *Sass
-*JacaScritpt 
+*JaVaScritpt 
 *RestApi
