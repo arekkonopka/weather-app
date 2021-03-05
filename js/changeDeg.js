@@ -47,4 +47,4 @@ class Degree {
 
 
 const deg = new Degree
-console.log(storage.getStorage('degree'))
+

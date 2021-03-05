@@ -78,3 +78,12 @@ class Eng {
 const pl = new Pl()
 const eng = new Eng()
 
+const loader = document.querySelector('.lds-roller')
+
+const addLoader = () => {
+  loader.classList.add('visible')
+}
+const removeLoader = () => {
+  loader.classList.remove('visible')
+}
+addLoader()

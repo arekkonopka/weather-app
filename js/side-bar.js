@@ -44,15 +44,17 @@ class SideBar {
       isThePolishLan = true
       if (isThePolishLan) {
         storage.addToStorage('lang', pl.setPl())
+        addLoader()
+        getGeoLocation('pl')
       }
     }
 
     const clickEng = () => {
       isThePolishLan = false
       if (!isThePolishLan) {
-
         storage.addToStorage('lang', eng.setEng())
-
+        addLoader()
+        getGeoLocation('eng')
       }
     }
 
@@ -67,5 +69,6 @@ const sideBar = new SideBar()
 sideBar.burgerAnimation()
 sideBar.chooseTheme()
 sideBar.chooseLan()
+
 
 

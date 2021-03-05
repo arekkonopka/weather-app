@@ -1,12 +1,29 @@
 const apiKey = '048e50534e65459a929ba4592b0e9259'
-navigator.geolocation.getCurrentPosition(succes, error)
-let lan = 'pl'
 
-function succes(position) {
-  let lat = position.coords.latitude
-  let lon = position.coords.longitude
-  getWeather(lat, lon)
+
+function getGeoLocation(chosenLang) {
+
+  chosenLang = storage.getStorage('lang')
+
+  function succes(position) {
+    let lat = position.coords.latitude
+    let lon = position.coords.longitude
+    getWeather(lat, lon, chosenLang)
+  }
+
+  function err() {
+    error(chosenLang)
+  }
+
+  if (!navigator.geolocation) {
+    console.log('loading')
+  } else {
+    navigator.geolocation.getCurrentPosition(succes, err);
+  }
+
 }
+
+
 
 function error(lan) {
   let lat = 52.2297700
@@ -34,10 +51,9 @@ function error(lan) {
 
 }
 
+function getWeather(lat, lon, lang) {
 
-function getWeather(lat, lon) {
-
-  fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&include=minutely&lang=${storage.getStorage('lang')}`)
+  fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&include=minutely&lang=${lang}`)
     .then((res) => res.json())
     .then((data) => {
 
@@ -53,10 +69,13 @@ function getWeather(lat, lon) {
       dewPoint.textContent = `${data.data[0].dewpt} °C`
       cloudy.textContent = `${data.data[0].clouds} %`
 
-
       deg.changeDeg(data.data[0].temp)
 
     })
+    .then(() => {
+      removeLoader()
+    })
 }
 
+getGeoLocation()
 
